@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-200">
+    <nav class="bg-blue-500 p-4 text-white shadow-md">
+        <div class="container mx-auto">
+            <div class="flex justify-between">
+                <div>
+                    <a href="index.html">
+                        <img src="Images/Logo.svg" alt="Logo" class="h-12 w-auto">
+                    </a>
+                </div>
+                <div>
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-5">Contact Us</h2>
+        <p class="mb-4">You can reach us through the following channels:</p>
+        <a href="https://discord.gg/pgMDmcmvtT" target="_blank"
+            class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-black no-underline">
+            <div class="mb-4">
+                <img src="Images/discord.png" alt="Discord Icon" class="h-6 w-6 inline-block mr-2">
+                <strong>Discord Server:</strong> Moeny Inc.
+            </div>
+        </a>
+        <a
+            class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-black no-underline">
+            <div class="mb-4">
+                <img src="Images/discord.png" alt="Discord Icon" class="h-6 w-6 inline-block mr-2">
+                <strong>Discord User:</strong> xraid
+            </div>
+        </a>
+        <a href="mailto:youremail@example.com"
+            class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-black no-underline">
+            <div class="mb-4">
+                <img src="Images/email.png" alt="Email Icon" class="h-6 w-6 inline-block mr-2">
+                <strong>Email:</strong> MoenyOfficial@outlook.com
+            </div>
+        </a>
+        <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 mt-5" role="alert">
+            <p class="font-bold mb-2">Working Hours</p>
+            <div class="schedule grid grid-cols-2 gap-2">
+                <div class="flex items-center">
+                    <p class="mr-2 font-semibold">Monday:</p>
+                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                    <p id="time1"></p>
+                </div>
+                <div class="flex items-center">
+                    <p class="mr-2 font-semibold">Tuesday:</p>
+                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                    <p id="time2"></p>
+                </div>
+                <div class="flex items-center">
+                    <p class="mr-2 font-semibold">Wednesday:</p>
+                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                    <p id="time3"></p>
+                </div>
+                <div class="flex items-center">
+                    <p class="mr-2 font-semibold">Thursday:</p>
+                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                    <p id="time4"></p>
+                </div>
+                <div class="flex items-center">
+                    <p class="mr-2 font-semibold">Friday:</p>
+                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                    <p id="time5"></p>
+                </div>
+                <div class="flex items-center">
+                    <p class="mr-2 font-semibold">Saturday:</p>
+                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                    <p id="time6"></p>
+                </div>
+                <div class="flex items-center">
+                    <p class="mr-2 font-semibold">Sunday:</p>
+                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                    <p id="time7"></p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function convertTimeToUserTimezone(time) {
+                const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                const date = new Date(time);
+                return date.toLocaleString('en-US', { timeZone: userTimezone, timeStyle: 'short' });
+            }
+
+            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            const times = ['16:00 - 21:00', '18:30 - 21:00', '17:30 - 21:00', '12:30 - 21:00', '17:30 - 21:00', '09:00 - 21:00', '12:00 - 21:00'];
+
+            for (let i = 0; i < days.length; i++) {
+                const timeElement = document.getElementById(`time${i + 1}`);
+                const timeRange = times[i].split(' - ');
+                const startTime = new Date();
+                const endTime = new Date();
+                startTime.setHours(timeRange[0].split(':')[0]);
+                startTime.setMinutes(timeRange[0].split(':')[1]);
+                endTime.setHours(timeRange[1].split(':')[0]);
+                endTime.setMinutes(timeRange[1].split(':')[1]);
+                const userStartTime = convertTimeToUserTimezone(startTime);
+                const userEndTime = convertTimeToUserTimezone(endTime);
+                timeElement.textContent = `${userStartTime} - ${userEndTime}`;
+            }
+        </script>
+    </div>
+</body>
+
+</html>
