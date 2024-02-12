@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
 </head>
 
 <body class="bg-gray-200">
@@ -68,39 +69,56 @@
                     <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
                     <p id="time3"></p>
                 </div>
+                <div class="flex items-center">
+                    <p class="mr-2 font-semibold">Thursday:</p>
+                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                    <p id="time4"></p>
+                </div>
+                <div class="flex items-center">
+                    <p class="mr-2 font-semibold">Friday:</p>
+                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                    <p id="time5"></p>
+                </div>
+                <div class="flex items-center">
+                    <p class="mr-2 font-semibold">Saturday:</p>
+                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                    <p id="time6"></p>
+                </div>
+                <div class="flex items-center">
+                    <p class="mr-2 font-semibold">Sunday:</p>
+                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                    <p id="time7"></p>
+                </div>
             </div>
         </div>
         
+       
+
         <script>
             // Define the timezone of the schedule times
-            const scheduleTimezone = 'Europe/Amsterdam';
-        
-            // Get the schedule times elements
-            const time1Element = document.getElementById('time1');
-            const time2Element = document.getElementById('time2');
-            const time3Element = document.getElementById('time3');
-        
-            // Define the schedule times in the schedule timezone
-            const scheduleTimes = ['14:00 - 21:00', '13:00', '16:00'];
-        
-            // Convert the schedule times to the user's local timezone and display them
-            scheduleTimes.forEach((time, index) => {
-                const [hours, minutes] = time.split(':');
-                const dateInScheduleTimezone = new Date(Date.UTC(1970, 0, 1, hours, minutes));
-        
-                const formatter = new Intl.DateTimeFormat('default', {
-                    hour: 'numeric',
-                    minute: 'numeric',
-                    timeZone: scheduleTimezone,
-                    hour12: true,
-                });
-        
-                const localTime = formatter.format(dateInScheduleTimezone);
-        
-                if (index === 0) time1Element.textContent = localTime;
-                if (index === 1) time2Element.textContent = localTime;
-                if (index === 2) time3Element.textContent = localTime;
-            });
+const scheduleTimezone = 'Europe/Amsterdam';
+
+// Get the schedule times elements
+const timeElements = Array.from({length: 7}, (_, i) => document.getElementById(`time${i + 1}`));
+
+// Define the schedule times in the schedule timezone
+const scheduleTimes = ['14:00 - 21:00', '13:00 - 16:00', '09:00 - 17:00', '09:00 - 17:00', '09:00 - 17:00', '10:00 - 15:00', 'Closed'];
+
+// Convert the schedule times to the user's local timezone and display them
+scheduleTimes.forEach((time, index) => {
+    if (time === 'Closed') {
+        timeElements[index].textContent = 'Closed';
+    } else {
+        const [start, end] = time.split(' - ').map(t => {
+            const [hours, minutes] = t.split(':');
+            const dateInScheduleTimezone = moment.tz([1970, 0, 1, hours, minutes], scheduleTimezone);
+
+            return dateInScheduleTimezone.clone().tz(moment.tz.guess()).format('HH:mm');
+        });
+
+        timeElements[index].textContent = `${start} - ${end}`;
+    }
+});
         </script>
 </body>
 
