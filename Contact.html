@@ -15,170 +15,147 @@
         <link href="style.css" rel="stylesheet">
     </head>
 
-    <body class="bg-gray-200">
-        <nav class="bg-blue-500 p-4 text-white shadow-md">
-            <div class="container mx-auto">
-                <div class="flex justify-between">
-                    <div>
-                        <a href="index.html">
-                            <img src="Images/Logo.svg" alt="Logo" class="h-12 w-auto">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="index.html" class="nav-link">Home</a>
-                        <a href="a.html" class="nav-link">About</a>
-                        <a href="contact.html" class="nav-link">Contact</a>
-                    </div>
+<body class="bg-gray-200">
+    <nav class="bg-blue-500 p-4 text-white shadow-md">
+        <div class="container mx-auto">
+            <div class="flex justify-between">
+                <div>
+                    <a href="index.html">
+                        <img src="Images/Logo.svg" alt="Logo" class="h-12 w-auto">
+                    </a>
+                </div>
+                <div>
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
                 </div>
             </div>
-        </nav>
-        <div class="container mx-auto p-4">
-            <h2 class="text-2xl font-bold mb-5">Contact Us</h2>
-            <p class="mb-4">You can reach us through the following channels:</p>
-            <a href="https://discord.gg/pgMDmcmvtT" target="_blank"
-                class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-black no-underline">
-                <div class="mb-4">
-                    <img src="Images/discord.png" alt="Discord Icon" class="h-6 w-6 inline-block mr-2">
-                    <strong>Discord Server:</strong> Moeny Inc.
-                </div>
-            </a>
-            <a class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-black no-underline">
-                <div class="mb-4">
-                    <img src="Images/discord.png" alt="Discord Icon" class="h-6 w-6 inline-block mr-2">
-                    <strong>Discord User:</strong> xraid
-                </div>
-            </a>
-            <a href="mailto:MoenyOfficial@outlook.com"
-                class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-black no-underline">
-                <div class="mb-4">
-                    <img src="Images/email.png" alt="Email Icon" class="h-6 w-6 inline-block mr-2">
-                    <strong>Email:</strong> MoenyOfficial@outlook.com
-                </div>
-            </a>
-            <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 mt-5" role="alert">
-                <p class="font-bold mb-2">Working Hours</p>
-                <div class="flex items-center mb-4">
-                    <label for="timezone" class="mr-2 font-semibold">Timezone:</label>
-                    <select id="timezone" class="border border-gray-300 rounded px-2 py-1">
-                        <option value="Pacific/Pago_Pago">Pago Pago (UTC-11)</option>
-                        <option value="Pacific/Honolulu">Honolulu (UTC-10)</option>
-                        <option value="Pacific/Marquesas">Marquesas (UTC-9:30)</option>
-                        <option value="Pacific/Gambier">Gambier (UTC-9)</option>
-                        <option value="America/Anchorage">Anchorage (UTC-9)</option>
-                        <option value="America/Los_Angeles">Los Angeles (UTC-8)</option>
-                        <option value="America/Denver">Denver (UTC-7)</option>
-                        <option value="America/Phoenix">Phoenix (UTC-7)</option>
-                        <option value="America/Chicago">Chicago (UTC-6)</option>
-                        <option value="America/New_York">New York (UTC-5)</option>
-                        <option value="America/Halifax">Halifax (UTC-4)</option>
-                        <option value="America/St_Johns">St. Johns (UTC-3:30)</option>
-                        <option value="America/Sao_Paulo">Sao Paulo (UTC-3)</option>
-                        <option value="America/Noronha">Noronha (UTC-2)</option>
-                        <option value="Atlantic/Azores">Azores (UTC-1)</option>
-                        <option value="Europe/London">London (UTC+0)</option>
-                        <option value="Europe/Amsterdam" selected>Amsterdam (UTC+1)</option>
-                        <option value="Europe/Athens">Athens (UTC+2)</option>
-                        <option value="Europe/Moscow">Moscow (UTC+3)</option>
-                        <option value="Asia/Dubai">Dubai (UTC+4)</option>
-                        <option value="Asia/Karachi">Karachi (UTC+5)</option>
-                        <option value="Asia/Kolkata">Kolkata (UTC+5:30)</option>
-                        <option value="Asia/Kathmandu">Kathmandu (UTC+5:45)</option>
-                        <option value="Asia/Dhaka">Dhaka (UTC+6)</option>
-                        <option value="Asia/Rangoon">Rangoon (UTC+6:30)</option>
-                        <option value="Asia/Bangkok">Bangkok (UTC+7)</option>
-                        <option value="Asia/Jakarta">Jakarta (UTC+7)</option>
-                        <option value="Asia/Shanghai">Shanghai (UTC+8)</option>
-                        <option value="Asia/Tokyo">Tokyo (UTC+9)</option>
-                        <option value="Australia/Sydney">Sydney (UTC+10)</option>
-                        <option value="Pacific/Guam">Guam (UTC+10)</option>
-                        <option value="Pacific/Noumea">Noumea (UTC+11)</option>
-                        <option value="Pacific/Tongatapu">Tongatapu (UTC+13)</option>
-                        <option value="Pacific/Kiritimati">Kiritimati (UTC+14)</option>
-                    </select>
-                </div>
-                <div class="schedule grid grid-cols-2 gap-2">
-                    <div class="flex items-center">
-                        <p class="mr-2 font-semibold">Monday:</p>
-                        <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
-                        <p id="time1"></p>
-                    </div>
-                    <div class="flex items-center">
-                        <p class="mr-2 font-semibold">Tuesday:</p>
-                        <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
-                        <p id="time2"></p>
-                    </div>
-                    <div class="flex items-center">
-                        <p class="mr-2 font-semibold">Wednesday:</p>
-                        <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
-                        <p id="time3"></p>
-                    </div>
-                    <div class="flex items-center">
-                        <p class="mr-2 font-semibold">Thursday:</p>
-                        <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
-                        <p id="time4"></p>
-                    </div>
-                    <div class="flex items-center">
-                        <p class="mr-2 font-semibold">Friday:</p>
-                        <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
-                        <p id="time5"></p>
-                    </div>
-                    <div class="flex items-center">
-                        <p class="mr-2 font-semibold">Saturday:</p>
-                        <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
-                        <p id="time6"></p>
-                    </div>
-                    <div class="flex items-center">
-                        <p class="mr-2 font-semibold">Sunday:</p>
-                        <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
-                        <p id="time7"></p>
-                    </div>
-                </div>
+        </div>
+    </nav>
+    <div class="container mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-5">Contact Us</h2>
+        <p class="mb-4">You can reach us through the following channels:</p>
+        <a href="https://discord.gg/pgMDmcmvtT" target="_blank"
+            class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-black no-underline">
+            <div class="mb-4">
+                <img src="Images/discord.png" alt="Discord Icon" class="h-6 w-6 inline-block mr-2">
+                <strong>Discord Server:</strong> Moeny Inc.
             </div>
+        </a>
+        <a class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-black no-underline">
+            <div class="mb-4">
+                <img src="Images/discord.png" alt="Discord Icon" class="h-6 w-6 inline-block mr-2">
+                <strong>Discord User:</strong> xraid
+            </div>
+        </a>
+        <a href="mailto:MoenyOfficial@outlook.com"
+            class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-black no-underline">
+            <div class="mb-4">
+                <img src="Images/email.png" alt="Email Icon" class="h-6 w-6 inline-block mr-2">
+                <strong>Email:</strong> MoenyOfficial@gmail.com
+            </div>
+        </a>
+        <div class="bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-400 border-l-4 border-yellow-600 text-yellow-800 p-4 mt-5 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105" role="alert">
+            <p class="font-semibold mb-2">Working Hours</p>
+            <div class="flex items-center mb-4">
+                <label for="timezone" class="mr-2 font-semibold">Select Timezone:</label>
+                <div class="relative">
+                    <select id="timezone" class="border border-gray-300 rounded px-3 py-1 focus:outline-none focus:border-yellow-500 transition duration-300 ease-in-out">
+                    <option value="Pacific/Pago_Pago">Pago Pago (UTC-11)</option>
+                    <option value="Pacific/Honolulu">Honolulu (UTC-10)</option>
+                    <option value="Pacific/Marquesas">Marquesas (UTC-9:30)</option>
+                    <option value="Pacific/Gambier">Gambier (UTC-9)</option>
+                    <option value="America/Anchorage">Anchorage (UTC-9)</option>
+                    <option value="America/Los_Angeles">Los Angeles (UTC-8)</option>
+                    <option value="America/Denver">Denver (UTC-7)</option>
+                    <option value="America/Phoenix">Phoenix (UTC-7)</option>
+                    <option value="America/Chicago">Chicago (UTC-6)</option>
+                    <option value="America/New_York">New York (UTC-5)</option>
+                    <option value="America/Halifax">Halifax (UTC-4)</option>
+                    <option value="America/St_Johns">St. Johns (UTC-3:30)</option>
+                    <option value="America/Sao_Paulo">Sao Paulo (UTC-3)</option>
+                    <option value="America/Noronha">Noronha (UTC-2)</option>
+                    <option value="Atlantic/Azores">Azores (UTC-1)</option>
+                    <option value="Europe/London">London (UTC+0)</option>
+                    <option value="Europe/Amsterdam" selected>Amsterdam (UTC+1)</option>
+                    <option value="Europe/Athens">Athens (UTC+2)</option>
+                    <option value="Europe/Moscow">Moscow (UTC+3)</option>
+                    <option value="Asia/Dubai">Dubai (UTC+4)</option>
+                    <option value="Asia/Karachi">Karachi (UTC+5)</option>
+                    <option value="Asia/Kolkata">Kolkata (UTC+5:30)</option>
+                    <option value="Asia/Kathmandu">Kathmandu (UTC+5:45)</option>
+                    <option value="Asia/Dhaka">Dhaka (UTC+6)</option>
+                    <option value="Asia/Rangoon">Rangoon (UTC+6:30)</option>
+                    <option value="Asia/Bangkok">Bangkok (UTC+7)</option>
+                    <option value="Asia/Jakarta">Jakarta (UTC+7)</option>
+                    <option value="Asia/Shanghai">Shanghai (UTC+8)</option>
+                    <option value="Asia/Tokyo">Tokyo (UTC+9)</option>
+                    <option value="Australia/Sydney">Sydney (UTC+10)</option>
+                    <option value="Pacific/Guam">Guam (UTC+10)</option>
+                    <option value="Pacific/Noumea">Noumea (UTC+11)</option>
+                    <option value="Pacific/Tongatapu">Tongatapu (UTC+13)</option>
+                    <option value="Pacific/Kiritimati">Kiritimati (UTC+14)</option>
+                </select>
+            </div>
+        </div>
+        
+    
+            <div class="schedule grid grid-cols -2gap-2">
+                <script>
+                    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                    const originalTimes = {
+                        time1: { start: '15:00:00', end: '21:00:00' },
+                        time2: { start: '18:30:00', end: '21:00:00' },
+                        time3: { start: '17:30:00', end: '21:00:00' },
+                        time4: { start: '12:30:00', end: '21:00:00' },
+                        time5: { start: '17:30:00', end: '21:00:00' },
+                        time6: { start: '14:00:00', end: '21:00:00' },
+                        time7: { start: '12:00:00', end: '21:00:00' }
+                    };
 
-            <script>
-                // Original times in GMT
-                const originalTimes = {
-                    time1: { start: '15:00:00', end: '21:00:00' },
-                    time2: { start: '18:30:00', end: '21:00:00' },
-                    time3: { start: '17:30:00', end: '21:00:00' },
-                    time4: { start: '12:30:00', end: '21:00:00' },
-                    time5: { start: '17:30:00', end: '21:00:00' },
-                    time6: { start: '14:00:00', end: '21:00:00' },
-                    time7: { start: '12:00:00', end: '21:00:00' }
-                };
+                    const timezoneSelect = document.getElementById('timezone');
+                    const scheduleContainer = document.querySelector('.schedule');
 
-                const timezoneSelect = document.getElementById('timezone');
-                const timeElements = document.querySelectorAll('.schedule p[id^="time"]');
+                    function updateSchedule() {
+                        const selectedTimezone = timezoneSelect.value;
 
-                function updateSchedule() {
-                    const selectedTimezone = timezoneSelect.value;
+                        scheduleContainer.innerHTML = '';
 
-                    timeElements.forEach((timeElement) => {
-                        const originalTime = originalTimes[timeElement.id];
-                        const dateInGMTStart = new Date(`1970-01-01T${originalTime.start}Z`); // Z ensures the time is treated as GMT
-                        const dateInGMTEnd = new Date(`1970-01-01T${originalTime.end}Z`); // Z ensures the time is treated as GMT
-                        let timeInSelectedTimezoneStart = dateInGMTStart.toLocaleTimeString('en-US', { timeZone: selectedTimezone, hour: '2-digit', minute: '2-digit' });
-                        let timeInSelectedTimezoneEnd = dateInGMTEnd.toLocaleTimeString('en-US', { timeZone: selectedTimezone, hour: '2-digit', minute: '2-digit' });
+                        for (const [key, value] of Object.entries(originalTimes)) {
+                            const dateInGMTStart = new Date(`1970-01-01T${value.start}Z`);
+                            const dateInGMTEnd = new Date(`1970-01-01T${value.end}Z`);
+                            let timeInSelectedTimezoneStart = dateInGMTStart.toLocaleTimeString('en-US', { timeZone: selectedTimezone, hour: '2-digit', minute: '2-digit' });
+                            let timeInSelectedTimezoneEnd = dateInGMTEnd.toLocaleTimeString('en-US', { timeZone: selectedTimezone, hour: '2-digit', minute: '2-digit' });
 
-                        if (selectedTimezone === 'Europe/London') {
-                            // Subtract one hour for London
-                            timeInSelectedTimezoneStart = new Date(dateInGMTStart - 3600 * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-                            timeInSelectedTimezoneEnd = new Date(dateInGMTEnd - 3600 * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                            if (selectedTimezone === 'Europe/London') {
+                                timeInSelectedTimezoneStart = new Date(dateInGMTStart - 3600 * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                                timeInSelectedTimezoneEnd = new Date(dateInGMTEnd - 3600 * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                            }
+
+                            const dayIndex = parseInt(key.replace('time', '')) - 1;
+                            const day = days[dayIndex];
+
+                            const scheduleItem = document.createElement('div');
+                            scheduleItem.classList.add('flex', 'items-center');
+                            scheduleItem.innerHTML = `
+                                    <p class="mr-2 font-semibold">${day}:</p>
+                                    <img src="Images/clock.png" alt="Clock Icon" class="h-6 w-6 inline-block mr-2">
+                                    <p>${timeInSelectedTimezoneStart} - ${timeInSelectedTimezoneEnd}</p>
+                                `;
+
+                            scheduleContainer.appendChild(scheduleItem);
                         }
+                    }
 
-                        timeElement.textContent = `${timeInSelectedTimezoneStart} - ${timeInSelectedTimezoneEnd}`;
-                    });
-                }
+                    timezoneSelect.addEventListener('change', updateSchedule);
 
-                timezoneSelect.addEventListener('change', updateSchedule);
-
-                // Update the schedule immediately on page load
-                updateSchedule();
-
-            </script>
-
+                    updateSchedule();
+                </script>
+            </div>
         </div>
 
-    </body>
-    </html>
+    </div>
 
+</body>
+
+</html>
