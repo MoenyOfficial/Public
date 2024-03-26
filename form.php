@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send the email
     if (mail($to, $subject, $message, $headers)) {
         // Redirect back to form.html
-        header("Location: form.html");
+        header("Location: index.html");
         exit;
     } else {
         echo "Email sending failed";
